@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://djh2ww2w1ta0x"
+path="res://.godot/imported/9 outta 10-converted.mp3-277e5a45bcbad7a4c5cd3dbc6ab79e4d.mp3str"
+
+[deps]
+
+source_file="res://recordings/9 outta 10-converted.mp3"
+dest_files=["res://.godot/imported/9 outta 10-converted.mp3-277e5a45bcbad7a4c5cd3dbc6ab79e4d.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

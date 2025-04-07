@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://or758hyixeb4"
+path="res://.godot/imported/compliment num 9-converted.mp3-b6d28b6384499dcf412c66d39ed24ab9.mp3str"
+
+[deps]
+
+source_file="res://recordings/compliment num 9-converted.mp3"
+dest_files=["res://.godot/imported/compliment num 9-converted.mp3-b6d28b6384499dcf412c66d39ed24ab9.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

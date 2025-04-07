@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://0f3mlv2g5n2r"
+path="res://.godot/imported/cool cuz ur in my game-converted.mp3-e1c4179e15c139ff82b978d97d3cd014.mp3str"
+
+[deps]
+
+source_file="res://recordings/cool cuz ur in my game-converted.mp3"
+dest_files=["res://.godot/imported/cool cuz ur in my game-converted.mp3-e1c4179e15c139ff82b978d97d3cd014.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

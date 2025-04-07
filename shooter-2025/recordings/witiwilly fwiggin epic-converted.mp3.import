@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bq5lf5ly52yj1"
+path="res://.godot/imported/witiwilly fwiggin epic-converted.mp3-ec6a20b04e266fd607c3c3cc3126c18a.mp3str"
+
+[deps]
+
+source_file="res://recordings/witiwilly fwiggin epic-converted.mp3"
+dest_files=["res://.godot/imported/witiwilly fwiggin epic-converted.mp3-ec6a20b04e266fd607c3c3cc3126c18a.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

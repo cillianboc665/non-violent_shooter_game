@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bvau66lg6qsu4"
+path="res://.godot/imported/cool shirt-converted.mp3-95f9e8c5e67b90f86e94b30f97550e0d.mp3str"
+
+[deps]
+
+source_file="res://recordings/cool shirt-converted.mp3"
+dest_files=["res://.godot/imported/cool shirt-converted.mp3-95f9e8c5e67b90f86e94b30f97550e0d.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

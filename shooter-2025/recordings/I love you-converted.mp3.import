@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ccvjeqvcliny0"
+path="res://.godot/imported/I love you-converted.mp3-2a58e4098e08a0d894e148733c48e54a.mp3str"
+
+[deps]
+
+source_file="res://recordings/I love you-converted.mp3"
+dest_files=["res://.godot/imported/I love you-converted.mp3-2a58e4098e08a0d894e148733c48e54a.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

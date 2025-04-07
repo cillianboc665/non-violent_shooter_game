@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ddclwn6i60pqw"
+path="res://.godot/imported/you can tie a tie-converted.mp3-581dcbd736550ad37c8965278869a525.mp3str"
+
+[deps]
+
+source_file="res://recordings/you can tie a tie-converted.mp3"
+dest_files=["res://.godot/imported/you can tie a tie-converted.mp3-581dcbd736550ad37c8965278869a525.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

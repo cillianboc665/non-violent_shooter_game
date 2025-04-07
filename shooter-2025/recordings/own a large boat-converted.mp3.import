@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bgafscqs7653v"
+path="res://.godot/imported/own a large boat-converted.mp3-734daa3c696ceff49775f246d7b1fd69.mp3str"
+
+[deps]
+
+source_file="res://recordings/own a large boat-converted.mp3"
+dest_files=["res://.godot/imported/own a large boat-converted.mp3-734daa3c696ceff49775f246d7b1fd69.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
