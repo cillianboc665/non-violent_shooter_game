@@ -1,8 +1,10 @@
-[gd_scene load_steps=6 format=4 uid="uid://btr32y0arl16u"]
+[gd_scene load_steps=8 format=4 uid="uid://btr32y0arl16u"]
 
+[ext_resource type="Script" uid="uid://4ibevre5wb6r" path="res://scenes/nonviolent_shooter.gd" id="1_t7r3i"]
 [ext_resource type="Texture2D" uid="uid://6l7o4bw2hpce" path="res://assets/kenney_top-down-shooter/Tilesheet/tilesheet_complete.png" id="2_r4vnw"]
 [ext_resource type="PackedScene" uid="uid://b67p7r8x8du3c" path="res://scenes/player.tscn" id="3_7rd6k"]
 [ext_resource type="PackedScene" uid="uid://d07pnl8p4fh28" path="res://scenes/tree.tscn" id="3_r4vnw"]
+[ext_resource type="PackedScene" uid="uid://dl7jxs660y5hq" path="res://scenes/enemy.tscn" id="4_7rd6k"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7rd6k"]
 texture = ExtResource("2_r4vnw")
@@ -7476,6 +7478,7 @@ texture = ExtResource("2_r4vnw")
 sources/1 = SubResource("TileSetAtlasSource_7rd6k")
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_t7r3i")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_t7r3i")
@@ -7559,3 +7562,8 @@ scale = Vector2(1.5, 1.5)
 
 [node name="player" parent="." instance=ExtResource("3_7rd6k")]
 position = Vector2(547, 287)
+
+[node name="enemy" parent="." instance=ExtResource("4_7rd6k")]
+position = Vector2(0, 379)
+
+[node name="MainCam" type="Camera2D" parent="."]
