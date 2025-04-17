@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cb2am0781undl"
+path="res://.godot/imported/Kevin MacLeod - Carefree.mp3-335a8b1240a33478cbc078a60b95d7ba.mp3str"
+
+[deps]
+
+source_file="res://Kevin MacLeod - Carefree.mp3"
+dest_files=["res://.godot/imported/Kevin MacLeod - Carefree.mp3-335a8b1240a33478cbc078a60b95d7ba.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
