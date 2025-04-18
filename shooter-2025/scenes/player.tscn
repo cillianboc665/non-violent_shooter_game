@@ -1,8 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://b67p7r8x8du3c"]
+[gd_scene load_steps=12 format=3 uid="uid://b67p7r8x8du3c"]
 
 [ext_resource type="Script" uid="uid://b7ludtm1yf34t" path="res://scripts/player.gd" id="1_g2els"]
 [ext_resource type="Texture2D" uid="uid://jedd4to0o458" path="res://assets/free-emojis-pixelart/emojis-x2-64x64/E22.png" id="2_qhqgy"]
 [ext_resource type="Texture2D" uid="uid://bplm4hgg0q462" path="res://assets/megaphone 2.png" id="3_qhqgy"]
+[ext_resource type="Texture2D" uid="uid://d3tdj084p4eha" path="res://assets/free-emojis-pixelart/emojis-x4-128x128/E5.png" id="4_qlg0r"]
+[ext_resource type="Texture2D" uid="uid://cs1sc5hjteaxj" path="res://assets/free-emojis-pixelart/emojis-x4-128x128/E6.png" id="5_tuyoq"]
+[ext_resource type="AudioStream" uid="uid://inie5k6thsw4" path="res://toms-screams.mp3" id="6_tuyoq"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dqkch"]
 radius = 30.0666
@@ -10,26 +13,123 @@ radius = 30.0666
 [sub_resource type="CircleShape2D" id="CircleShape2D_qhqgy"]
 radius = 36.0555
 
+[sub_resource type="Animation" id="Animation_qlg0r"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("main:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("sad:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("cry:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_fjrip"]
+resource_name = "crode"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("main:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("sad:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.3, 1.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("cry:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1.3, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_smehm"]
+_data = {
+&"RESET": SubResource("Animation_qlg0r"),
+&"crode": SubResource("Animation_fjrip")
+}
+
 [node name="player" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_g2els")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="main" type="Sprite2D" parent="."]
 texture_filter = 1
 texture = ExtResource("2_qhqgy")
 
-[node name="Sprite2D" type="Sprite2D" parent="Sprite2D"]
+[node name="megaphone" type="Sprite2D" parent="main"]
 show_behind_parent = true
 position = Vector2(48, 0)
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("3_qhqgy")
 
+[node name="sad" type="Sprite2D" parent="."]
+visible = false
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_qlg0r")
+
+[node name="cry" type="Sprite2D" parent="."]
+visible = false
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_tuyoq")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(0, 2)
 shape = SubResource("CircleShape2D_dqkch")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="hitbox" type="Area2D" parent="."]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
 position = Vector2(0, 2)
@@ -39,5 +139,13 @@ shape = SubResource("CircleShape2D_qhqgy")
 
 [node name="BulletSpawn" type="Node2D" parent="."]
 position = Vector2(60.14, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_smehm")
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_tuyoq")
 
 [connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]

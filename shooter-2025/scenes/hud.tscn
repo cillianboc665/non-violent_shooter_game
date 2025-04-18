@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://cpqd6msv53jjl"]
+
+[ext_resource type="FontFile" uid="uid://bfvyvem7hvgu8" path="res://assets/Spongeboy Me Bob.ttf" id="1_ahhtf"]
+[ext_resource type="Script" uid="uid://bl64d3ovlph56" path="res://scenes/hud.gd" id="1_oo0fn"]
+
+[sub_resource type="Theme" id="Theme_oo0fn"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_5ysmq"]
+font = ExtResource("1_ahhtf")
+font_size = 25
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_oo0fn")
+
+[node name="score" type="Label" parent="."]
+offset_left = 45.0
+offset_top = 60.0
+offset_right = 299.0
+offset_bottom = 86.0
+theme = SubResource("Theme_oo0fn")
+text = "Compliments Given: "
+label_settings = SubResource("LabelSettings_5ysmq")

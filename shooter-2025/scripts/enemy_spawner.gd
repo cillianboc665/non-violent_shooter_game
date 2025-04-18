@@ -5,6 +5,7 @@ extends Node2D
 var enemy_scene := preload("res://scenes/enemy.tscn")
 var spawn_points := []
 
+var score_ui: Node = null
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -16,5 +17,7 @@ func _ready() -> void:
 func _on_timer_timeout() -> void:
 	var spawn = spawn_points[randi() % spawn_points.size()]
 	var opps = enemy_scene.instantiate()
+	if score_ui:
+		opps.score.connect(score_ui._score)
 	opps.position = spawn.position
 	main.add_child(opps)

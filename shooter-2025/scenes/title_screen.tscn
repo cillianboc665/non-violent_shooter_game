@@ -1,0 +1,86 @@
+[gd_scene load_steps=12 format=3 uid="uid://0mdjjt8ch3yy"]
+
+[ext_resource type="Script" uid="uid://bf2pmx8x2tbq" path="res://scripts/title_screen.gd" id="1_s4lrb"]
+[ext_resource type="FontFile" uid="uid://bfvyvem7hvgu8" path="res://assets/Spongeboy Me Bob.ttf" id="2_mgrm8"]
+[ext_resource type="Texture2D" uid="uid://cr1f66tx42h6r" path="res://assets/free-emojis-pixelart/emojis-x4-128x128/E2.png" id="3_dc4i4"]
+[ext_resource type="Texture2D" uid="uid://coqg2ynwtcqhp" path="res://assets/free-emojis-pixelart/emojis-x4-128x128/E4.png" id="4_mgrm8"]
+[ext_resource type="Texture2D" uid="uid://koph275rjq76" path="res://assets/Screenshot 2025-04-18 152428.png" id="5_dc4i4"]
+[ext_resource type="Texture2D" uid="uid://baywi7y6bscyo" path="res://assets/free-emojis-pixelart/emojis-x4-128x128/E22.png" id="6_3yumr"]
+[ext_resource type="Texture2D" uid="uid://d3pgiib7cdn6n" path="res://assets/free-emojis-pixelart/emojis-x4-128x128/E27.png" id="7_cs5ya"]
+[ext_resource type="AudioStream" uid="uid://8u1csh17jbyw" path="res://Fluffing-a-Duck(chosic.com).mp3" id="8_cs5ya"]
+
+[sub_resource type="Theme" id="Theme_e54dn"]
+default_font = ExtResource("2_mgrm8")
+default_font_size = 42
+
+[sub_resource type="Theme" id="Theme_mykxm"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_tklts"]
+font_size = 81
+
+[node name="TitleScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_s4lrb")
+
+[node name="Start" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1124.0
+offset_top = 481.545
+offset_right = 1382.0
+offset_bottom = 617.545
+theme = SubResource("Theme_e54dn")
+text = "Start"
+icon = ExtResource("3_dc4i4")
+
+[node name="Quit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1124.0
+offset_top = 651.56
+offset_right = 1382.0
+offset_bottom = 787.56
+theme = SubResource("Theme_e54dn")
+text = "Quit
+"
+icon = ExtResource("4_mgrm8")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+show_behind_parent = true
+position = Vector2(1368, 529.75)
+scale = Vector2(1.2, 1.278)
+texture = ExtResource("5_dc4i4")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(1252, 570)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 989.165
+offset_top = 335.0
+offset_right = 1523.17
+offset_bottom = 417.0
+theme = SubResource("Theme_mykxm")
+theme_override_fonts/font = ExtResource("2_mgrm8")
+theme_override_font_sizes/font_size = 1126
+text = "MAKE HAPPY!"
+label_settings = SubResource("LabelSettings_tklts")
+
+[node name="Sprite2D" type="Sprite2D" parent="Label"]
+position = Vector2(-60.17, 25)
+texture = ExtResource("6_3yumr")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Label"]
+position = Vector2(591.995, 25)
+texture = ExtResource("7_cs5ya")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_cs5ya")
+autoplay = true
+parameters/looping = true
+
+[connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]

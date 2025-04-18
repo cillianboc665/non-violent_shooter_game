@@ -2,6 +2,8 @@ extends CharacterBody2D
 
 class_name enemy
 
+signal score
+
 @onready var animation_player = $AnimationPlayer
 
 var player: Player = null
@@ -49,6 +51,7 @@ func _take_damage(amount: int):
 		if hp <= 0:
 			var rand_sound = sounds[randi() % sounds.size()]
 			rand_sound.play()
+			score.emit()
 			velocity = Vector2.ZERO
 			player = null
 			animation_player.play("complimented")
